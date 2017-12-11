@@ -1,5 +1,5 @@
 # Mac-Restore
-----
+
 Simple set of scripts to auto-install my custom dev environment in MacOS
 
 ## Prerequisites
@@ -17,7 +17,6 @@ You also need to have a similar directory containing your AWS credentials and co
 You cannot git-clone the repo (because git isn't installed yet). Just download the zip, unzip in some directory, open a terminal in this directory and type the following commands
 
 ```
-chmod u+x mac-restore.sh
-chmod u+x zsh-restore.zsh
+chmod u+x *sh
 ./mac-restore.sh
 ```

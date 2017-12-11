@@ -17,7 +17,17 @@ brew update
 brew upgrade --all
 
 echo "  Installing brew formulae"
-brew install git python3 wget zsh
+brew install git \
+             python \
+             python3 \
+             wget \
+             zsh \
+             mysql \
+             redis \
+             tree \
+             htop \
+             cloc \
+             gradle
 
 echo "  Installing Brew Caskroom"
 brew tap caskroom/cask
@@ -50,25 +60,19 @@ brew cleanup
 # Remove cask cruft
 brew cask cleanup
 
+# Setting up Prezto
+echo "  Setting up your AWS"
+./zsh-installer.zsh
+
+# Setting up AWS client
 echo "  Setting up your Prezto"
-source custom_prezto_installer.zsh
+./aws-installer.sh
 
-echo "  Setting up AWS CLI"
-sudo pip3 install awscli --upgrade
-
-echo "  Installation Complete. Configuring"
-echo "  Please select folder which contains your prezto backup files:"
-# select BACKUP_DIR in */; do test -n "$BACKUP_DIR" && break; echo ">>> Invalid Selection"; done
-# cd "$BACKUP_DIR" && pwd
-vared -c BACKUP_DIR
-
-echo "  Copying over previous config"
-mkdir -p $HOME/.aws
-cp -r $BACKUP_DIR $HOME/.aws
 
 echo "  Enjoy your new macbook pro"
 echo "  There's some things you manually have to do though:"
-echo "    1. Please manually install dynalist and logitech options"
+echo "    1. Please manually install crossover, dynalist and logitech options"
 echo "    2. Login to Skype, Slack, Evernote, Dynalist, Spotify"
 echo "    3. Manually restore IntelliJ and PyCharm settings from JAR files"
 echo "    4. Manually add tunnelblick VPN client"
+echo "    5. Manually create the github SSH key for your office account"
