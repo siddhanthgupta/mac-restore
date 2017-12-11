@@ -16,23 +16,23 @@ read -s PASSWORD
 ssh-keygen  -t rsa \
             -b 4096 \
             -C "siddhanth@codenation.co.in" \
-            -f "$HOME/.ssh/github_rsa2" \
+            -f "$HOME/.ssh/github_rsa" \
             -N $PASSWORD \
 
 # Starting the SSH agent
 eval "$(ssh-agent -s)"
 
 # vim ~/.ssh/config
-touch "$HOME/.ssh/config2"
-cat <<EOM >> "$HOME/.ssh/config2"
+touch "$HOME/.ssh/config"
+cat <<EOM >> "$HOME/.ssh/config"
 Host github.com
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/github_rsa2
+  IdentityFile ~/.ssh/github_rsa
 EOM
 
-# ssh-add -K $HOME/.ssh/github_rsa
-# pbcopy < $HOME/.ssh/github_rsa.pub
+ssh-add -K $HOME/.ssh/github_rsa
+pbcopy < $HOME/.ssh/github_rsa.pub
 
 echo "  Key copied to clipboard. A browser window will open to register your new SSH key"
 echo "  Add a title, and paste the content in clipboard in the key field "
