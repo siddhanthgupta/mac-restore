@@ -61,12 +61,16 @@ brew cleanup
 brew cask cleanup
 
 # Setting up Prezto
-echo "  Setting up your AWS"
-./zsh-installer.zsh
+echo "  Setting up your ZSH using prezto"
+./zsh-restore.zsh
 
 # Setting up AWS client
-echo "  Setting up your Prezto"
-./aws-installer.sh
+echo "  Setting up your AWS"
+./aws-restore.sh
+
+# Setting up SSH keys for github
+echo "  Setting up your Git"
+./git-restore.sh
 
 
 echo "  Enjoy your new macbook pro"
@@ -75,4 +79,4 @@ echo "    1. Please manually install crossover, dynalist and logitech options"
 echo "    2. Login to Skype, Slack, Evernote, Dynalist, Spotify"
 echo "    3. Manually restore IntelliJ and PyCharm settings from JAR files"
 echo "    4. Manually add tunnelblick VPN client"
-echo "    5. Manually create the github SSH key for your office account"
+echo "    5. Install the Snazzy theme on iterm2, and add keyboard shortcuts"
